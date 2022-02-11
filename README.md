@@ -1,1 +1,1 @@
-# turtle-web3
+turtle racing game built on the Rinkeby network, utilizing Chainlink VRF
