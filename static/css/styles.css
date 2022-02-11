@@ -1,0 +1,229 @@
+/* Overall */
+
+html {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body,html {
+    width: 100%;
+    height: 100%;
+    background: #E0E0E0;
+}
+
+body {
+    display: -webkit-inline-box; 
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            -ms-grid-row-align: center;
+        align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+#app-container {
+    width: 100%;
+    height: 100%;
+    display: -webkit-inline-box; 
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            -ms-grid-row-align: center;
+        align-items: center;
+}
+
+#container {
+    width: 100%;
+}
+
+
+/* Top buttons: wallet & claim */
+
+#info-top {
+    width: 100%;
+    padding: 0.3rem 0rem;
+    display: -webkit-inline-box; 
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    position: absolute;
+    top: 0;
+}
+
+.but-top {
+    display: -webkit-inline-box; 
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            -ms-grid-row-align: center;
+        align-items: center;
+
+    border-radius: 10px;
+    padding: 0.25rem 0.25rem;
+    width: 160px;
+    height: 32px;
+    font-size: 17px;
+}
+
+#wallet {
+    margin-right: 0.5rem;
+    background: #CAC3D9;
+    box-shadow: 1px 2px #888888;
+    cursor: pointer;
+}
+
+#claim {
+    margin-right: 0.35rem;
+    background: #738587;
+    box-shadow: 1px 2px #666666;
+}
+
+
+/* Bottom buttons: info table */
+
+#info-bot {
+    width: 100%;
+    padding: 0.3rem 0rem;
+    display: -webkit-inline-box; 
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.table {
+    border: 1px solid #222222;
+    border-radius: 4px;
+    padding: 0.25rem 0.25rem;
+    margin: 0rem 0.25rem;
+    width: 180px;
+}
+
+.inner-table {
+    width: 100%;
+    padding: 0.08rem 0rem;
+    display: -webkit-inline-box; 
+    display: -ms-inline-flexbox;
+    display: inline-flex;    
+    justify-content: flex-start;
+}
+
+.title {
+    padding-right: 0.15rem;
+    padding: 0.1rem 0.1rem;
+}
+
+.content {
+    background: #CAC3D9;
+    border: 1px solid #222222;
+    border-radius: 2px;
+    padding: 0.1rem 0.1rem;
+}
+
+
+/* Game graphics */
+
+#game {
+    width: 100%;
+    display: -webkit-inline-box; 
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+
+    position: relative;
+}
+
+#street {
+    width: 410px;
+    height: 600px;
+    border-radius: 4px;
+}
+
+#turtle1,#turtle2 {
+    height: 100px; 
+    position: absolute;
+    bottom: 0px;
+}
+
+#turtle1 {
+    padding-right:210px;
+}
+
+#turtle2 {
+    padding-left:210px;
+}
+
+
+/* Pop up */
+
+#pop-up {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    position: absolute;
+    padding: 1rem 1rem;
+    background: #CAC3D9;
+    box-shadow: 2px 3px #888888;
+}
+
+#gamble-button {
+    font-size: 16px;
+    background: #738587;
+    color: #F5F5F5;
+    border: 0;
+    border-radius: 2px;
+    padding: 0.2rem 0.4rem;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.non-clickable {
+    cursor: default;
+}
+
+#turtle-pick,#amount {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    border-bottom-color: #222222;
+    background-color: #E0E0E0;
+}
+
+
+/* others */
+
+input:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 400px) {
+    #street {
+        width: 370px;
+        height: 470px;
+    } 
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name = 'description' content = 'Rinkeby turtle race.'>
+    <link rel="icon" href="./static/img/turtles/turtle_1_2.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link href = "./static/css/reset.css" type = 'text/css' rel = 'stylesheet'>
+    <link href = "./static/css/styles.css" type = 'text/css' rel = 'stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.1.4/ethers.umd.min.js" charset="utf-8" type="text/javascript"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue@3.0.0"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script language="javascript" type="text/javascript" src="./static/js/simulate.js"></script>
+    <script language="javascript" type="text/javascript" src="./static/js/RandomNumberConsumer.js"></script> <!-- from hardhat deployments -->
+
+  </head>
+  <body>
+    <div id="app">
+      <div id="app-container">
+
+          <div id="info-top">
+            <div id="claim" class="but-top" :class="claimAmount.gt(0) ? clickable : nonClickable" @click="claimFunds">
+              <p> {{ claimText }} </p>
+            </div>
+            <div id="wallet" class="but-top" @click="connectWallet">
+              <!--<input type="submit" value="{{walletText}}">-->
+              <p>{{ walletText }}</p>
+            </div>
+          </div>
+
+        <div id="container">
+
+          <div id="info-bot">
+            <div class="table">
+              <div class="inner-table">
+                <p class="title">Win %:</p>&nbsp
+                <p class="content" id="win-percentage">{{ winPercentage }}</p>
+              </div>
+              <div class="inner-table">
+                <p class="title">Pool:</p>&nbsp
+                <p class="content" id="money">{{ poolAmount }}</p>
+              </div>
+            </div>
+
+            <div class="table">
+              <div class="inner-table">
+                <p class="title">Last Winner:</p>&nbsp
+                <p class="content" id="previous-winner">{{ lastWinner }}</p>
+              </div>
+              <div class="inner-table">
+                <p class="title">Win Streak:</p>&nbsp
+                <p class="content" id="streak">{{ winStreak }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="game">
+            <img id="street" src="./static/img/streets/street_1.png" />
+            <img id="turtle1" src="./static/img/turtles/turtle_1_1.png" />
+            <img id="turtle2" src="./static/img/turtles/turtle_2_1.png" />
+          </div>
+        </div>
+
+        <div id="pop-up" v-show="!runningRace">
+          <p id="popup-text"> {{ popupMessage }} </p>
+          <br>
+          <label>Turtle:</label>&nbsp
+          <input type="text" id="turtle-pick" v-model="turtlePicked" />
+          <br>
+          <label>Amount:</label>&nbsp
+          <input type="text" id="amount" v-model="amountGambled" />
+          <br><br>
+          <input type="submit" value="Gamble" id="gamble-button" v-show="!userGambled" :class="validWallet ? clickable : nonClickable" @click="handleGamble" />
+        </div>
+
+      </div>
+    </div>
+
+  <!-- import app -->
+  <script type="text/javascript" src="./static/js/main.js"></script>
+
+  <!-- mount app -->
+  <script type="text/javascript">
+    const mountedApp = app.mount("#app")
+  </script>
+  </body>
+</html>
